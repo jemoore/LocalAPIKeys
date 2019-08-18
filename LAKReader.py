@@ -19,7 +19,6 @@ class LAKReader:
     # End of file
     """
     def __init__(self):
-        self.default_file='~/.safe/api-keys.txt'
         self.lakDict = {}
 
     def read(self, api_key_file = '/home/jeff/.safe/api-keys.txt'):
@@ -43,7 +42,7 @@ class LAKReader:
 
     def getAPIKey(self, service):
         """Query internal storage for an API key associated to service."""
-        if self.lakDict == None:
+        if len(self.lakDict) == 0:
             return ""
 
         service = service.strip()
